@@ -1,7 +1,11 @@
-name: test-1
-on: 
+name: workflow
+on:
+  push:
+    branches:
+      - '**'
   workflow_dispatch:
 jobs:
+# main
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
@@ -10,5 +14,3 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
-
-
