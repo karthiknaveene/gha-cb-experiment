@@ -1,14 +1,15 @@
-name: test-1
-on: 
-  workflow_dispatch:
+name: Test workflow
+
+on:
+  push:
+    branches:
+      - "main"
+
 jobs:
-  check-bats-version:
+  job1:
+    name: Job1
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm install -g bats
-      - run: bats -v
-
-
+      - name: Print Start Message
+        run: echo "Workflow started..."
