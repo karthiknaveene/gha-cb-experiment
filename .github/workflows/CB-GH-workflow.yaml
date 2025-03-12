@@ -9,11 +9,9 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World from Build
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
       - run: npm install -g bats
-      - name: version
       - run: bats -v
 
