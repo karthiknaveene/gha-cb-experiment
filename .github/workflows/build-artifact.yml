@@ -27,4 +27,4 @@ jobs:
           # Qa
           # cloudbees-url: ${{ secrets.QA_CBP_URL }}
           # prod
-          cloudbees-url: ${{ secrets.PROD_CBP_URL }}
+          cloudbees-url: 'https://api.saas-preprod.beescloud.com'
