@@ -1,0 +1,30 @@
+name: gha-register-build-artifacts
+on: [workflow_dispatch]
+  
+jobs:
+  publish-artifact:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Run My Custom Go Action
+        uses: ./
+        # uses: cloudbees-io-gha/register-build-artifact@v3
+        id: go-action
+        with:
+          name: "testing-artifacts-hjs001"
+          version: "1.001"
+          url: "docker.io/calculi-corp/gha-action/artifact:test001"
+          digest: "sha256:a1a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb1"
+          type: "docker"
+          label: "test,prod"
+          # preprod
+          # cloudbees-url: ${{ secrets.PREPROD_CBP_URL }}
+          # Qa
+          # cloudbees-url: ${{ secrets.QA_CBP_URL }}
+          # prod
+          cloudbees-url: ${{ secrets.PROD_CBP_URL }}
