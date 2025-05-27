@@ -1,9 +1,6 @@
 name: Test workflow
 
-on:
-  push:
-    branches:
-      - "main"
+on:[workflow_dispatch]
 
 jobs:
   job1:
