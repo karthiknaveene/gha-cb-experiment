@@ -1,5 +1,5 @@
 name: gha-register-build-artifacts
-on: [workflow_dispatch]
+on: ['workflow_dispatch', 'push']
   
 jobs:
   publish-artifact:
