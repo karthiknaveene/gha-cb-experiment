@@ -1,6 +1,6 @@
 name: Test workflow changed
 
-on:[workflow_dispatch]
+on:push
 
 jobs:
   job1:
